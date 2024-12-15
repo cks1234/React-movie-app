@@ -7,7 +7,7 @@ import MovieCard from './MovieCard'
 // https://www.omdbapi.com/apikey.aspx 
 // a4d8d58d OMDB apikey
 
-const API_URL = 'http://www.omdbapi.com?apikey=a4d8d58d';
+const API_URL = 'https://www.omdbapi.com?apikey=a4d8d58d';
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -16,9 +16,7 @@ const App = () => {
     const searchMovies = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`);
         const data = await response.json();
-
         setMovies(data.Search);
-
     }
 
     useEffect(() => {
